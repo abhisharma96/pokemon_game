@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    #over{
+      display: block;
+      position: relative;
+      text-align: center;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 2s;
+      animation-name: animatebottom;
+      animation-duration: 2s;
+    }
+    #again{
+      display: block;
+      position: relative;
+      text-align: center;
+      -webkit-animation-name: animatebottom2;
+      -webkit-animation-duration: 2s;
+      animation-name: animatebottom2;
+      animation-duration: 2s
+    }
+    @-webkit-keyframes animatebottom {
+      from {opacity:0 }
+      to { opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ opacity:0 }
+      to{ opacity:1 }
+    }
+    @-webkit-keyframes animatebottom2 {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom2 {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0px; opacity:1 }
+    }
+    /*.cover{
+      border: 2px solid black;
+      position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    }*/
+    #play_again:active{
+    transform: translateY(4px);
+    }
+    #play_again:hover{
+      opacity: 0.8;
+    }
+    #ab{
+      z-index: 1;
+      text-align: center;
+      color: yellow;
+      text-shadow: 3px 3px 3px red,6px 6px 6px black;
+    }
+  </style>
+  <body background="back.jpg">
+    <div id="over">
+      <img src="gameover.png" alt="gameover" height="300px" width="500px" />
+    </div>
+    <div id="ab" >
+      <h1 ><u id="sc"></u></h1>
+    </div>
+    <div id="again">
+      <img id="play_again"  src="playagain.png" onclick="window.location.href='index.html'" alt="play again" height="100px" width="200px" />
+    </div>
+  </body>
+  <script type="text/javascript">
+    var s=sessionStorage.getItem('score');
+    var c=s.toString()
+    document.getElementById("sc").innerHTML='YOUR SCORE IS:- '+c;
+  </script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    .cover{
+      display:inline-block;
+      width: 100%;
+      text-align: center
+    }
+    .t{
+      position: relative;
+      margin-top: 5%;
+      display: block;
+      text-align: center;
+    }
+    /*.p:hover{
+      width: 200px;
+      height: 200px;
+      opacity: 1;
+      -webkit-opacity: 1;
+      -moz-opacity: 1;
+    }*/
+    .p:hover{
+      opacity: 0.5;
+    }
+    .p{
+      position: relative;
+      padding: 4%;
+      display: inline-block;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 3s;
+      animation-name: animatebottom;
+      animation-duration: 3s;
+    }
+    @-webkit-keyframes animatebottom {
+      from {bottom: : 200px;opacity:0 }
+      to {bottom: 0;opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      /*from{opacity:0 }
+      to{opacity:1 }*/
+      from {bottom:200px;opacity:0 }
+      to {bottom: 0;opacity:1 }
+    }
+    @-webkit-keyframes animatebottom2 {
+      from {bottom:-300px; opacity:0 }
+      to {bottom: 0px; opacity:1 }
+    }
+
+    @keyframes animatebottom2 {
+      from {bottom:-300px; opacity:0 }
+      to {bottom: 0px; opacity:1 }
+    }
+    body{
+     background-size: cover;
+    }
+    h1{
+      text-shadow: 1px 1px 0px white;
+      color: white;
+    }
+    .caption{
+      position: relative;
+      /*width: 100%;
+      margin-top:5%;*/
+      text-align: center;
+      -webkit-animation-name: animatebottom2;
+      -webkit-animation-duration: 3s;
+      animation-name: animatebottom2;
+      animation-duration: 3s;
+    }
+  </style>
+  <body background="bg.png">
+    <div class="t">
+      <img  src="selectp.jpg" alt="select"  height="20%" width="30%" />
+    </div>
+    <div class="cover">
+    <div id='1' class="p">
+       <img  src="pika.png" alt="" height="150px" width="150px" onclick="store('assets/pika.png',1)" />
+       <div class="caption">
+        <h1>PIKA</h1>
+       </div>
+    </div>
+
+    <div id='2' class="p">
+       <img  src="assets/pl2.png" alt="" height="150px" width="150px" onclick="store('assets/pl2.png',2)" />
+       <div class="caption">
+        <h1>SANDSHREW</h1>
+       </div>
+    </div>
+    <div id='3' class="p">
+      <img  src="assets/pl3.png" alt="" height="150px" width="150px" onclick="store('assets/pl3.png',3)"/>
+      <div class="caption">
+       <h1>CHARMANDER</h1>
+      </div>
+    </div>
+    <div id='4' class="p">
+      <img  src="assets/pl4.png" alt="" height="150px" width="150px" onclick="store('assets/pl4.png',4)"/>
+      <div class="caption">
+       <h1>SQUIRTLE</h1>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script type="text/javascript">
+  function store(a,b){
+    for(var i=1;i<=4;i++){
+      if(i!=b){
+        var c=i.toString();
+        console.log(c);
+      document.getElementById(c).style.display="None";
+      }
+    }
+    localStorage.setItem('playerID',JSON.stringify(a));
+    setInterval(function(){
+    window.location.href="game.html";
+  },2000)
+
+  }
+  </script>
+</html>

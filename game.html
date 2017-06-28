@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name=""viewport content="width=device-width , user-scalable=0"/>
+    <title>Title</title>
+
+    <style>
+        #mycanvas{
+            top: 50%;
+            left: 50%;
+            margin-left: -700;
+            margin-top: -325;
+            background-image: url("water.png");
+            background-size: cover;
+            z-index: -10;
+        }
+        /*#score{
+          position: absolute;
+
+            border:2px solid black;
+            height:40px;
+            width: 100px;
+            margin-left: 600px;
+            background-color: white;
+            z-index: 10;
+        }*/
+        #level{
+          color: darkblue;
+          text-shadow:2px 2px 2px blue,2px 2px 2px red;
+        }
+        #le{
+          display: none;
+          position: absolute;
+            height:40px;
+            width: 200px;
+            margin-top: 20%;
+            margin-left: 600px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+<!-- <div id="score"></div> -->
+<div id="le">
+  <h1 id="level"></h1>
+</div>
+<canvas id="mycanvas" width="1400px" height="750px">
+
+</canvas>
+<script src="game.js"></script>
+</body>
+</html>
